@@ -1,19 +1,22 @@
 
-import React from 'react'
-import Navbar from './component/Navbar'
 import Home from './pages/Home'
-import Footer from './component/Footer'
-function App() {
-  
+import Navbar from './component/Navbar'
+import {Route, Routes} from 'react-router-dom';
+import Login from './pages/Login';
+import SignUp from './pages/SignUp';
+import '../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import '../node_modules/bootstrap-dark-5/dist/css/bootstrap-dark.min.css'
 
+
+function App() {
   return (
     <>
-    
-    <div>
-      <Navbar />
-      <Home />
-      <Footer />
-    </div>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/signup' element={<SignUp/>}/>
+      </Routes>
     </>
   )
 }
